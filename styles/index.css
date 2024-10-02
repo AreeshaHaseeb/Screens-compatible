@@ -1,0 +1,22 @@
+body{
+    background-color: #000000;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0px;
+    gap: 80px;
+}
+.logo{
+    color: white;
+}
+.nav-links li{
+    color: white;
+    list-style-type: none;
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;    
+    gap: 25px;
+}
