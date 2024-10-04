@@ -1,5 +1,7 @@
 body{
     background-color: #000000;
+    max-width: 1440px;
+    width: 95%;
 }
 .navbar{
     display: flex;
@@ -13,15 +15,27 @@ body{
     font-size: 24px;
 }
 .nav-links li{
-    color: white;
     list-style-type: none;
     font-family: "Source Code Pro", monospace;
     font-size: 16px;
+    color: inherit;
 }
 .nav-links ul{
     display: flex;
     flex-direction: row;
     gap: 35px;
+}
+.nav-links a {
+    text-decoration: none; 
+    transition: color 0.3s ease;
+    color: white;
+}
+.nav-links a:hover {
+    color: #ff6347; 
+}
+.logo:hover{
+    color: #ff6347; 
+    cursor: pointer;
 }
 .nav-links{
     display: flex;
@@ -63,19 +77,21 @@ body{
     justify-content: center;
     padding: 0px 20px;
 }
-/*@media screen and (max-width: 768px){
-    .navbar{
-        width: 70%;
-    }
-}*/
+.heading-img .image {
+    background-image: url('../images/mtfuji.png');
+    background-size: cover;
+    background-position: center;
+    width: 864px;
+    height: 486px;
+}
 @media screen and (max-width: 768px){
     .heading{
         font-size: 32px;
     }
     .image{
-        width: 630px; 
-        height:50vh;
-        padding: 10px 0 0px 10px;
+        background-image: url('../images/mtfujitablet.png');
+        background-size: cover;
+        background-position: center;
     }
     .heading-paragraph{
         font-size: 18px;
@@ -91,9 +107,9 @@ body{
     .heading{
         font-size: 20px;}
     .image{
-        width: 97%; 
-        height:40vh;
-        padding: 30px 0 10px 10px;
+        background-image: url('../images/mtfujimobile.png');
+        background-size: cover;
+        background-position: center;
     }
     .nav-links ul{
         display: none;
