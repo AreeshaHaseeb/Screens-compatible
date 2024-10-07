@@ -8,28 +8,18 @@
 </head>
 <body>
     <nav>
-        <div class="navbar">
-                <div class="logo"><p>Head.</p></div>
-            <div class="nav-links-placement">
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="">Works</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Contacts</a></li>            
+        <div class="nav-header">
+            <div class="logo"><p>Head.</p></div>
+            <div class="header">
+                <div class="link-menu">                
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon">         
+                 </span></label>
+                    <ul class="menu">
+                        <li><a href="#work">Works</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#contact">Contacts</a></li>
                     </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="toggleDropdown()">
-                        <img src="images/icon.png" alt="Menu Icon" class="menu-icon">
-                    </button>
-                    <div class="dropdown-content" id="dropdown-menu">
-                        <ul>
-                            <li><a href="">Drop-down-item</a></li>
-                            <li class="mobile-only"><a href="">Works</a></li>
-                            <li class="mobile-only"><a href="">Services</a></li>
-                            <li class="mobile-only"><a href="">Contacts</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -42,36 +32,6 @@
         <div class="heading-img">
             <div class="image"></div> 
         </div>
-    </main>
-    <script>
-        function toggleDropdown() {
-                let dropdown = document.getElementById("dropdown-menu");
-                dropdown.classList.toggle("show");
-            }
-
-            document.addEventListener("click", function (event) {
-            let dropdown = document.getElementById("dropdown-menu");
-            let dropbtn = document.querySelector(".dropbtn");
-
-            if (!dropdown || !dropbtn) return;
-
-            if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
-                dropdown.classList.remove("show");
-            }
-        });
-
-            document.addEventListener("touchstart", function (event) {
-                let dropdown = document.getElementById("dropdown-menu");
-                let dropbtn = document.querySelector(".dropbtn");
-
-                if (!dropdown || !dropbtn) return;
-
-                if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
-                    dropdown.classList.remove("show");
-                }
-            });
-
-    </script>
-            
+    </main>         
 </body>
 </html>

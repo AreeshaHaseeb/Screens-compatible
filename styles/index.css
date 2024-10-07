@@ -3,66 +3,110 @@ body {
     max-width: 1440px;
     width: 95%;
 }
-
-.navbar {
+.header{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 80px;
-    align-items: center;
-    margin-left: 20px;
+    justify-content: flex-end;
 }
-
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+.link-menu{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
 .logo {
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.nav-links li {
-    list-style-type: none;
-    font-family: "Source Code Pro", monospace;
-    font-size: 16px;
-    color: inherit;
-}
-
-.nav-links ul {
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
-}
-
-.nav-links a {
+    display: block;
+    float: left;
+    font-size: 30px;
+    padding: 0px 20px;
     text-decoration: none;
-    transition: color 0.3s ease;
-    color: white;
-}
-
-.nav-links a:hover {
-    color: #ff6347;
-}
-
-.logo:hover {
-    color: #ff6347;
+    color: white;                              
+    margin-left: 60px;
+    position: fixed;    
     cursor: pointer;
 }
-
-.nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
+.header li a {
+    display: block;
+    padding: 50px 50px;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Source Code Pro", monospace;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #368271;
 }
-.nav-links-placement{
-    display: flex;
-    align-items: center;
-    gap: 45px;
-    margin-top: 5px;
+
+.header li a:hover {
+    background-color: #066d2f;
+}
+  
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 23px 10px;
+    user-select: none;
+    margin-left: 40px;
+    position: fixed;
+    margin-top: 13px;
+}
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 20px;
+    position: relative;
+    width: 118px;
+}
+ 
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333333;
+  content: '';
+  display: block;
+  height: 80%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+    top: 0px;
+}
+  
+.header .menu-icon .navicon:after {
+    top: 0px;
+}
+.header .menu-btn {
+    display: none;
+}
+  
+.header .menu-btn:checked ~ .menu {
+    max-height: 440px;
+}
+  
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+  
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    margin-top: 70px;
 }
 .main-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 20px;
+    padding: 20px 80px;
+    margin-left: 50px;
 }
 
 .heading {
@@ -76,22 +120,6 @@ body {
     padding: 20px 60px;
 }
 
-.menu-icon {
-    width: 30px; 
-    height: 30px;
-    display: block;
-    margin: 0;
-}
-
-.dropbtn {
-    background-color: transparent; 
-    border: none; 
-    cursor: pointer; 
-    padding: 0; 
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
 
 .heading-paragraph {
     color: white;
@@ -108,6 +136,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0px 20px;
+    margin-left: 50px;
 }
 
 .heading-img .image {
@@ -118,181 +147,46 @@ body {
     height: 486px;
 }
 
-.menu-img {
-    margin-top: 15px;
-    position: relative;
-    cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;  
-    background-color: #333;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    border-radius: 5px;
-    padding: 10px;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px; 
-}
-
-.dropdown ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    color: #ff6347;
-
-}
-.dropdown ul li a:hover {
-    color: #ff6347; 
-    border-radius: 5px;
-}
-.dropdown ul li {
-    padding: 10px 15px; 
-}
-
-.dropdown ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    font-size: 18px;
-    transition: color 0.3s ease; 
-}
-
-.show {
-    display: block;
-}
-@media screen and (min-width: 361px) {
-    .dropdown ul .mobile-only {
-        display: none; /* Hide mobile-only items */
-    }
-}
 @media screen and (max-width: 768px) {
-    .navbar {
-        padding: 20px 40px;
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 90px;
-    }
-
-    .dropdown {
-        display: block; 
-        position: static;
-        width: 100%;
-        padding: 10px;
-    }
-    .dropdown-content {
-        position: absolute;
-        top: 90px;
-        left: 80%;
-        width: 30%; 
-    }
-    .dropdown-content ul li {
-        padding: 15px 0px;
-        text-align: center;
-    }
-    .dropdown ul li a {
-        font-size: 18px;
+    .header li a {
         display: block;
-        color: white;
-        text-decoration: none;
+        padding: 30px 30px;
+        font-size: 17px;
+        margin-right: 10px;
     }
-
-    .dropdown-content.show {
-        display: block;
+    .header ul {
+        background-color: none;
     }
-
-    .heading {
-        font-size: 32px;
-    }
-    .dropdown-content ul .mobile-only {
-        display: none;
-    }
-    
-    .heading-img .image {
-        background-image: url(../images/mtfuji.png);
-        background-size: cover;
-        background-position: center;
-        width: 520px;
-        height: 540px;
-    }
-    .heading-paragraph {
-        font-size: 18px;
-        line-height: 25px;
+    .heading-img{
+        margin-left: 30px;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .dropdown ul .mobile-only {
-        display: block; 
-    }
-    .menu-img {
-        display: block;
-    }
-
-    .nav-links ul {
-        display: none;
-    }
-
-    .dropdown {
-        display: block; 
-        position: static;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .dropdown-content {
-        position: absolute;
-        top: 90px;
-        left: 80%;
-        width: 40%; 
-    }
-
-    .dropdown-content ul li {
-        padding: 15px 0px;
-        text-align: center;
-    }
-
-    .dropdown ul li a {
-        font-size: 16px;
-        display: block;
-        color: white;
-        text-decoration: none;
-    }
-
-    .dropdown-content.show {
-        display: block; 
-    }
-
-    .heading-paragraph {
-        font-size: 15px;
+    .heading-paragraph{
+        font-size: 17px;
         line-height: 20px;
+        width: 100%;
     }
-
-    .heading {
+    .heading-img{
+        margin-left: 3px;
+    }
+    .heading{
+        font-size: 21px;
+    }
+    .main-info{
+        margin-left: 10px;
+        margin-top: 50px;
+    }
+    .heading{
+        padding: 10px 30px;
+    }
+    .logo{
         font-size: 20px;
+        margin-left: 20px;
     }
-
-    .image {
-        background-image: url('../images/mtfujimobile.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .navbar {
-        padding: 20px 40px;
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 90px;
+    .header .menu-icon{
+        margin-top: 0px;
+        margin-left: 10px;
     }
 }
