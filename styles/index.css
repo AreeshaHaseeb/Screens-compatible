@@ -22,12 +22,12 @@ body {
     display: block;
     float: left;
     font-size: 30px;
-    padding: 0px 20px;
     text-decoration: none;
     color: white;                              
     margin-left: 60px;
     position: fixed;    
     cursor: pointer;
+    margin-top: 25px;
 }
 .header li a {
     display: block;
@@ -117,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 60px;
+    padding: 50px 60px;
 }
 
 
@@ -130,6 +130,7 @@ body {
     justify-content: center;
     text-align: center;
     width: 80%;
+    margin-bottom: 30px;
 }
 .main-info img{
     height: 300px;
